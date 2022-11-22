@@ -1,0 +1,13 @@
+D:\GitHub\SecureDatabase\Final\Final\obj\Debug\SecureDatabase.csproj.AssemblyReference.cache
+D:\GitHub\SecureDatabase\Final\Final\obj\Debug\SecureDatabase.csproj.SuggestedBindingRedirects.cache
+D:\GitHub\SecureDatabase\Final\Final\obj\Debug\Final.New_Customer.resources
+D:\GitHub\SecureDatabase\Final\Final\obj\Debug\Final.OrderedCDs.resources
+D:\GitHub\SecureDatabase\Final\Final\obj\Debug\Final.Login.resources
+D:\GitHub\SecureDatabase\Final\Final\obj\Debug\SecureDatabase.csproj.GenerateResource.cache
+D:\GitHub\SecureDatabase\Final\Final\obj\Debug\SecureDatabase.csproj.CoreCompileInputs.cache
+D:\GitHub\SecureDatabase\Final\Final\bin\Debug\SecureDatabase.exe.config
+D:\GitHub\SecureDatabase\Final\Final\bin\Debug\SecureDatabase.exe
+D:\GitHub\SecureDatabase\Final\Final\bin\Debug\SecureDatabase.pdb
+D:\GitHub\SecureDatabase\Final\Final\obj\Debug\SecureDatabase.Properties.Resources.resources
+D:\GitHub\SecureDatabase\Final\Final\obj\Debug\SecureDatabase.exe
+D:\GitHub\SecureDatabase\Final\Final\obj\Debug\SecureDatabase.pdb
