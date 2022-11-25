@@ -1,3 +1,20 @@
+
+
+CREATE TABLE alithe2 (
+a int not null primary key,
+);
+
+CREATE TABLE alithe (
+b int,
+foreign key(b) references alithe2(a) on update cascade on delete cascade,
+);
+
+insert into alithe(b) values (4);
+insert into alithe2(a) values (4);
+select a from alithe2 where a = 4;
+
+
+
 CREATE TABLE Customer(
 Customer_ID INT PRIMARY KEY,
 Fname VARCHAR(20) NOT NULL,

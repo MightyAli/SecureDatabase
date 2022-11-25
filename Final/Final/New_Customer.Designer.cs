@@ -1,5 +1,5 @@
 ﻿
-namespace Final
+namespace SecureDatabase
 {
     partial class New_Customer
     {
@@ -47,34 +47,37 @@ namespace Final
             // 
             // PassTestBox
             // 
-            this.PassTestBox.Location = new System.Drawing.Point(415, 210);
+            this.PassTestBox.Location = new System.Drawing.Point(376, 175);
+            this.PassTestBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PassTestBox.Name = "PassTestBox";
             this.PassTestBox.PasswordChar = '*';
-            this.PassTestBox.Size = new System.Drawing.Size(210, 26);
+            this.PassTestBox.Size = new System.Drawing.Size(187, 22);
             this.PassTestBox.TabIndex = 3;
             // 
             // CustomerIDTestBox
             // 
-            this.CustomerIDTestBox.Location = new System.Drawing.Point(415, 12);
+            this.CustomerIDTestBox.Location = new System.Drawing.Point(376, 18);
+            this.CustomerIDTestBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CustomerIDTestBox.Name = "CustomerIDTestBox";
-            this.CustomerIDTestBox.Size = new System.Drawing.Size(210, 26);
+            this.CustomerIDTestBox.Size = new System.Drawing.Size(187, 22);
             this.CustomerIDTestBox.TabIndex = 4;
             // 
             // ConfirmPassTestBox
             // 
-            this.ConfirmPassTestBox.Location = new System.Drawing.Point(415, 259);
+            this.ConfirmPassTestBox.Location = new System.Drawing.Point(376, 211);
+            this.ConfirmPassTestBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ConfirmPassTestBox.Name = "ConfirmPassTestBox";
             this.ConfirmPassTestBox.PasswordChar = '*';
-            this.ConfirmPassTestBox.Size = new System.Drawing.Size(210, 26);
+            this.ConfirmPassTestBox.Size = new System.Drawing.Size(187, 22);
             this.ConfirmPassTestBox.TabIndex = 5;
             // 
             // ConfirmPassLabel
             // 
             this.ConfirmPassLabel.AutoSize = true;
             this.ConfirmPassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmPassLabel.Location = new System.Drawing.Point(102, 259);
+            this.ConfirmPassLabel.Location = new System.Drawing.Point(91, 204);
             this.ConfirmPassLabel.Name = "ConfirmPassLabel";
-            this.ConfirmPassLabel.Size = new System.Drawing.Size(289, 37);
+            this.ConfirmPassLabel.Size = new System.Drawing.Size(244, 31);
             this.ConfirmPassLabel.TabIndex = 6;
             this.ConfirmPassLabel.Text = "Confirm Password:";
             // 
@@ -82,27 +85,28 @@ namespace Final
             // 
             this.FnameLabel.AutoSize = true;
             this.FnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FnameLabel.Location = new System.Drawing.Point(111, 48);
+            this.FnameLabel.Location = new System.Drawing.Point(91, 47);
             this.FnameLabel.Name = "FnameLabel";
-            this.FnameLabel.Size = new System.Drawing.Size(126, 37);
+            this.FnameLabel.Size = new System.Drawing.Size(106, 31);
             this.FnameLabel.TabIndex = 7;
             this.FnameLabel.Text = "Fname:";
             // 
             // CustomerIDLabel
             // 
             this.CustomerIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerIDLabel.Location = new System.Drawing.Point(111, 12);
+            this.CustomerIDLabel.Location = new System.Drawing.Point(91, 10);
             this.CustomerIDLabel.Name = "CustomerIDLabel";
-            this.CustomerIDLabel.Size = new System.Drawing.Size(234, 37);
+            this.CustomerIDLabel.Size = new System.Drawing.Size(208, 30);
             this.CustomerIDLabel.TabIndex = 8;
             this.CustomerIDLabel.Text = "Customer ID:";
             // 
             // OKButton
             // 
             this.OKButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OKButton.Location = new System.Drawing.Point(118, 358);
+            this.OKButton.Location = new System.Drawing.Point(520, 286);
+            this.OKButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OKButton.Name = "OKButton";
-            this.OKButton.Size = new System.Drawing.Size(301, 53);
+            this.OKButton.Size = new System.Drawing.Size(168, 63);
             this.OKButton.TabIndex = 10;
             this.OKButton.Text = "Ok";
             this.OKButton.UseVisualStyleBackColor = true;
@@ -111,9 +115,10 @@ namespace Final
             // BackButton
             // 
             this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackButton.Location = new System.Drawing.Point(621, 358);
+            this.BackButton.Location = new System.Drawing.Point(12, 286);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(167, 53);
+            this.BackButton.Size = new System.Drawing.Size(180, 63);
             this.BackButton.TabIndex = 11;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -121,32 +126,35 @@ namespace Final
             // 
             // MobileNumberTextBox
             // 
-            this.MobileNumberTextBox.Location = new System.Drawing.Point(415, 149);
+            this.MobileNumberTextBox.Location = new System.Drawing.Point(376, 137);
+            this.MobileNumberTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MobileNumberTextBox.Name = "MobileNumberTextBox";
-            this.MobileNumberTextBox.Size = new System.Drawing.Size(210, 26);
+            this.MobileNumberTextBox.Size = new System.Drawing.Size(187, 22);
             this.MobileNumberTextBox.TabIndex = 12;
             // 
             // LnameTextBox
             // 
-            this.LnameTextBox.Location = new System.Drawing.Point(415, 101);
+            this.LnameTextBox.Location = new System.Drawing.Point(376, 98);
+            this.LnameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LnameTextBox.Name = "LnameTextBox";
-            this.LnameTextBox.Size = new System.Drawing.Size(210, 26);
+            this.LnameTextBox.Size = new System.Drawing.Size(187, 22);
             this.LnameTextBox.TabIndex = 13;
             // 
             // FnameTextBox
             // 
-            this.FnameTextBox.Location = new System.Drawing.Point(415, 59);
+            this.FnameTextBox.Location = new System.Drawing.Point(376, 57);
+            this.FnameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FnameTextBox.Name = "FnameTextBox";
-            this.FnameTextBox.Size = new System.Drawing.Size(210, 26);
+            this.FnameTextBox.Size = new System.Drawing.Size(187, 22);
             this.FnameTextBox.TabIndex = 14;
             // 
             // LnameLabel
             // 
             this.LnameLabel.AutoSize = true;
             this.LnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LnameLabel.Location = new System.Drawing.Point(111, 101);
+            this.LnameLabel.Location = new System.Drawing.Point(93, 88);
             this.LnameLabel.Name = "LnameLabel";
-            this.LnameLabel.Size = new System.Drawing.Size(124, 37);
+            this.LnameLabel.Size = new System.Drawing.Size(104, 31);
             this.LnameLabel.TabIndex = 15;
             this.LnameLabel.Text = "Lname:";
             // 
@@ -154,9 +162,9 @@ namespace Final
             // 
             this.MobileNumberLabel.AutoSize = true;
             this.MobileNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MobileNumberLabel.Location = new System.Drawing.Point(102, 149);
+            this.MobileNumberLabel.Location = new System.Drawing.Point(91, 125);
             this.MobileNumberLabel.Name = "MobileNumberLabel";
-            this.MobileNumberLabel.Size = new System.Drawing.Size(243, 37);
+            this.MobileNumberLabel.Size = new System.Drawing.Size(204, 31);
             this.MobileNumberLabel.TabIndex = 16;
             this.MobileNumberLabel.Text = "Mobile Number:";
             // 
@@ -164,18 +172,18 @@ namespace Final
             // 
             this.PassLabel.AutoSize = true;
             this.PassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassLabel.Location = new System.Drawing.Point(111, 210);
+            this.PassLabel.Location = new System.Drawing.Point(91, 166);
             this.PassLabel.Name = "PassLabel";
-            this.PassLabel.Size = new System.Drawing.Size(167, 37);
+            this.PassLabel.Size = new System.Drawing.Size(142, 31);
             this.PassLabel.TabIndex = 17;
             this.PassLabel.Text = "Password:";
             // 
             // New_Customer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(711, 360);
             this.Controls.Add(this.PassLabel);
             this.Controls.Add(this.MobileNumberLabel);
             this.Controls.Add(this.LnameLabel);
@@ -191,6 +199,7 @@ namespace Final
             this.Controls.Add(this.CustomerIDTestBox);
             this.Controls.Add(this.PassTestBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "New_Customer";

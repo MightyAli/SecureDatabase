@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient; //For DataBase functions
 
-namespace Final
+namespace SecureDatabase
 {
     public partial class OrderedCDs : Form
     {
         double unitPrice = 0;
         int OrderQuan = 0;
+
         SqlConnection cnn;
         string Customer_ID;
-        string s = ("Data Source = localhost; Initial Catalog = shop; Integrated Security = True; Pooling=False");
+        string s = ("Data Source = ACER\\SQLEXPRESS; Initial Catalog = Movies; Integrated Security = True;");
         public OrderedCDs(string Customer_ID)
         {
             InitializeComponent();
@@ -77,7 +78,7 @@ namespace Final
         private void BackButton_Click(object sender, EventArgs e)
         {
             Hide();
-            Login f = new Login();
+            Movies f = new Movies();
             f.ShowDialog();
             Close();
         }

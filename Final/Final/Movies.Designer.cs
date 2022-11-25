@@ -1,7 +1,7 @@
 ﻿
-namespace Final
+namespace SecureDatabase
 {
-    partial class Login
+    partial class Movies
     {
         /// <summary>
         /// Required designer variable.
@@ -41,9 +41,10 @@ namespace Final
             // LoginButton
             // 
             this.LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.Location = new System.Drawing.Point(179, 267);
+            this.LoginButton.Location = new System.Drawing.Point(343, 221);
+            this.LoginButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(177, 60);
+            this.LoginButton.Size = new System.Drawing.Size(157, 48);
             this.LoginButton.TabIndex = 0;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
@@ -51,26 +52,28 @@ namespace Final
             // 
             // CustomerIDTextBox
             // 
-            this.CustomerIDTextBox.Location = new System.Drawing.Point(374, 131);
+            this.CustomerIDTextBox.Location = new System.Drawing.Point(332, 105);
+            this.CustomerIDTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CustomerIDTextBox.Name = "CustomerIDTextBox";
-            this.CustomerIDTextBox.Size = new System.Drawing.Size(210, 26);
+            this.CustomerIDTextBox.Size = new System.Drawing.Size(187, 22);
             this.CustomerIDTextBox.TabIndex = 1;
             // 
             // PasswordTextBox
             // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(352, 202);
+            this.PasswordTextBox.Location = new System.Drawing.Point(332, 163);
+            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
-            this.PasswordTextBox.Size = new System.Drawing.Size(210, 26);
+            this.PasswordTextBox.Size = new System.Drawing.Size(187, 22);
             this.PasswordTextBox.TabIndex = 2;
             // 
             // CustomerIDLabel
             // 
             this.CustomerIDLabel.AutoSize = true;
             this.CustomerIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerIDLabel.Location = new System.Drawing.Point(172, 125);
+            this.CustomerIDLabel.Location = new System.Drawing.Point(153, 100);
             this.CustomerIDLabel.Name = "CustomerIDLabel";
-            this.CustomerIDLabel.Size = new System.Drawing.Size(196, 37);
+            this.CustomerIDLabel.Size = new System.Drawing.Size(168, 31);
             this.CustomerIDLabel.TabIndex = 3;
             this.CustomerIDLabel.Text = "CustomerID:";
             // 
@@ -78,18 +81,19 @@ namespace Final
             // 
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordLabel.Location = new System.Drawing.Point(181, 195);
+            this.PasswordLabel.Location = new System.Drawing.Point(155, 156);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(167, 37);
+            this.PasswordLabel.Size = new System.Drawing.Size(142, 31);
             this.PasswordLabel.TabIndex = 4;
             this.PasswordLabel.Text = "Password:";
             // 
             // ExitButton
             // 
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.Location = new System.Drawing.Point(611, 378);
+            this.ExitButton.Location = new System.Drawing.Point(543, 302);
+            this.ExitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(177, 60);
+            this.ExitButton.Size = new System.Drawing.Size(157, 48);
             this.ExitButton.TabIndex = 5;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
@@ -98,20 +102,21 @@ namespace Final
             // NewCustomerButton
             // 
             this.NewCustomerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewCustomerButton.Location = new System.Drawing.Point(385, 267);
+            this.NewCustomerButton.Location = new System.Drawing.Point(12, 302);
+            this.NewCustomerButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NewCustomerButton.Name = "NewCustomerButton";
-            this.NewCustomerButton.Size = new System.Drawing.Size(255, 60);
+            this.NewCustomerButton.Size = new System.Drawing.Size(227, 48);
             this.NewCustomerButton.TabIndex = 6;
             this.NewCustomerButton.Text = "New Customer";
             this.NewCustomerButton.UseVisualStyleBackColor = true;
             this.NewCustomerButton.Click += new System.EventHandler(this.NewCustomerButton_Click);
             // 
-            // Login
+            // Movies
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(711, 360);
             this.Controls.Add(this.NewCustomerButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.PasswordLabel);
@@ -120,11 +125,12 @@ namespace Final
             this.Controls.Add(this.CustomerIDTextBox);
             this.Controls.Add(this.LoginButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Login";
+            this.Name = "Movies";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Movie Box system";
+            this.Text = "Movies";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

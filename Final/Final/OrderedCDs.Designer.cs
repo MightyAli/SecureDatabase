@@ -1,5 +1,5 @@
 ﻿
-namespace Final
+namespace SecureDatabase
 {
     partial class OrderedCDs
     {
