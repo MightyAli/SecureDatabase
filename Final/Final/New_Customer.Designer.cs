@@ -29,8 +29,9 @@ namespace SecureDatabase
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(New_Customer));
             this.PassTestBox = new System.Windows.Forms.TextBox();
-            this.CustomerIDTestBox = new System.Windows.Forms.TextBox();
+            this.EmailTestBox = new System.Windows.Forms.TextBox();
             this.ConfirmPassTestBox = new System.Windows.Forms.TextBox();
             this.ConfirmPassLabel = new System.Windows.Forms.Label();
             this.FnameLabel = new System.Windows.Forms.Label();
@@ -49,27 +50,30 @@ namespace SecureDatabase
             // 
             this.PassTestBox.Location = new System.Drawing.Point(376, 175);
             this.PassTestBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PassTestBox.MaxLength = 20;
             this.PassTestBox.Name = "PassTestBox";
             this.PassTestBox.PasswordChar = '*';
             this.PassTestBox.Size = new System.Drawing.Size(187, 22);
-            this.PassTestBox.TabIndex = 3;
+            this.PassTestBox.TabIndex = 5;
             // 
-            // CustomerIDTestBox
+            // EmailTestBox
             // 
-            this.CustomerIDTestBox.Location = new System.Drawing.Point(376, 18);
-            this.CustomerIDTestBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CustomerIDTestBox.Name = "CustomerIDTestBox";
-            this.CustomerIDTestBox.Size = new System.Drawing.Size(187, 22);
-            this.CustomerIDTestBox.TabIndex = 4;
+            this.EmailTestBox.Location = new System.Drawing.Point(376, 18);
+            this.EmailTestBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.EmailTestBox.MaxLength = 50;
+            this.EmailTestBox.Name = "EmailTestBox";
+            this.EmailTestBox.Size = new System.Drawing.Size(187, 22);
+            this.EmailTestBox.TabIndex = 1;
             // 
             // ConfirmPassTestBox
             // 
             this.ConfirmPassTestBox.Location = new System.Drawing.Point(376, 211);
             this.ConfirmPassTestBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ConfirmPassTestBox.MaxLength = 20;
             this.ConfirmPassTestBox.Name = "ConfirmPassTestBox";
             this.ConfirmPassTestBox.PasswordChar = '*';
             this.ConfirmPassTestBox.Size = new System.Drawing.Size(187, 22);
-            this.ConfirmPassTestBox.TabIndex = 5;
+            this.ConfirmPassTestBox.TabIndex = 6;
             // 
             // ConfirmPassLabel
             // 
@@ -98,7 +102,7 @@ namespace SecureDatabase
             this.CustomerIDLabel.Name = "CustomerIDLabel";
             this.CustomerIDLabel.Size = new System.Drawing.Size(208, 30);
             this.CustomerIDLabel.TabIndex = 8;
-            this.CustomerIDLabel.Text = "Customer ID:";
+            this.CustomerIDLabel.Text = "Email:";
             // 
             // OKButton
             // 
@@ -128,31 +132,34 @@ namespace SecureDatabase
             // 
             this.MobileNumberTextBox.Location = new System.Drawing.Point(376, 137);
             this.MobileNumberTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MobileNumberTextBox.MaxLength = 50;
             this.MobileNumberTextBox.Name = "MobileNumberTextBox";
             this.MobileNumberTextBox.Size = new System.Drawing.Size(187, 22);
-            this.MobileNumberTextBox.TabIndex = 12;
+            this.MobileNumberTextBox.TabIndex = 4;
             // 
             // LnameTextBox
             // 
             this.LnameTextBox.Location = new System.Drawing.Point(376, 98);
             this.LnameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LnameTextBox.MaxLength = 50;
             this.LnameTextBox.Name = "LnameTextBox";
             this.LnameTextBox.Size = new System.Drawing.Size(187, 22);
-            this.LnameTextBox.TabIndex = 13;
+            this.LnameTextBox.TabIndex = 3;
             // 
             // FnameTextBox
             // 
             this.FnameTextBox.Location = new System.Drawing.Point(376, 57);
             this.FnameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FnameTextBox.MaxLength = 50;
             this.FnameTextBox.Name = "FnameTextBox";
             this.FnameTextBox.Size = new System.Drawing.Size(187, 22);
-            this.FnameTextBox.TabIndex = 14;
+            this.FnameTextBox.TabIndex = 2;
             // 
             // LnameLabel
             // 
             this.LnameLabel.AutoSize = true;
             this.LnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LnameLabel.Location = new System.Drawing.Point(93, 88);
+            this.LnameLabel.Location = new System.Drawing.Point(91, 87);
             this.LnameLabel.Name = "LnameLabel";
             this.LnameLabel.Size = new System.Drawing.Size(104, 31);
             this.LnameLabel.TabIndex = 15;
@@ -162,7 +169,7 @@ namespace SecureDatabase
             // 
             this.MobileNumberLabel.AutoSize = true;
             this.MobileNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MobileNumberLabel.Location = new System.Drawing.Point(91, 125);
+            this.MobileNumberLabel.Location = new System.Drawing.Point(91, 129);
             this.MobileNumberLabel.Name = "MobileNumberLabel";
             this.MobileNumberLabel.Size = new System.Drawing.Size(204, 31);
             this.MobileNumberLabel.TabIndex = 16;
@@ -172,7 +179,7 @@ namespace SecureDatabase
             // 
             this.PassLabel.AutoSize = true;
             this.PassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassLabel.Location = new System.Drawing.Point(91, 166);
+            this.PassLabel.Location = new System.Drawing.Point(91, 168);
             this.PassLabel.Name = "PassLabel";
             this.PassLabel.Size = new System.Drawing.Size(142, 31);
             this.PassLabel.TabIndex = 17;
@@ -182,7 +189,7 @@ namespace SecureDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(711, 360);
             this.Controls.Add(this.PassLabel);
             this.Controls.Add(this.MobileNumberLabel);
@@ -196,16 +203,17 @@ namespace SecureDatabase
             this.Controls.Add(this.FnameLabel);
             this.Controls.Add(this.ConfirmPassLabel);
             this.Controls.Add(this.ConfirmPassTestBox);
-            this.Controls.Add(this.CustomerIDTestBox);
+            this.Controls.Add(this.EmailTestBox);
             this.Controls.Add(this.PassTestBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "New_Customer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Customer";
-            this.Load += new System.EventHandler(this.Change_Password_Load);
+            this.Load += new System.EventHandler(this.New_Customer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,7 +222,7 @@ namespace SecureDatabase
         #endregion
 
         private System.Windows.Forms.TextBox PassTestBox;
-        private System.Windows.Forms.TextBox CustomerIDTestBox;
+        private System.Windows.Forms.TextBox EmailTestBox;
         private System.Windows.Forms.TextBox ConfirmPassTestBox;
         private System.Windows.Forms.Label ConfirmPassLabel;
         private System.Windows.Forms.Label FnameLabel;

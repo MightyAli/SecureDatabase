@@ -29,8 +29,9 @@ namespace SecureDatabase
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Movies));
             this.LoginButton = new System.Windows.Forms.Button();
-            this.CustomerIDTextBox = new System.Windows.Forms.TextBox();
+            this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.CustomerIDLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
@@ -50,18 +51,20 @@ namespace SecureDatabase
             this.LoginButton.UseVisualStyleBackColor = true;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
-            // CustomerIDTextBox
+            // EmailTextBox
             // 
-            this.CustomerIDTextBox.Location = new System.Drawing.Point(332, 105);
-            this.CustomerIDTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CustomerIDTextBox.Name = "CustomerIDTextBox";
-            this.CustomerIDTextBox.Size = new System.Drawing.Size(187, 22);
-            this.CustomerIDTextBox.TabIndex = 1;
+            this.EmailTextBox.Location = new System.Drawing.Point(313, 109);
+            this.EmailTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.EmailTextBox.MaxLength = 50;
+            this.EmailTextBox.Name = "EmailTextBox";
+            this.EmailTextBox.Size = new System.Drawing.Size(187, 22);
+            this.EmailTextBox.TabIndex = 1;
             // 
             // PasswordTextBox
             // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(332, 163);
+            this.PasswordTextBox.Location = new System.Drawing.Point(313, 162);
             this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PasswordTextBox.MaxLength = 20;
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(187, 22);
@@ -71,11 +74,11 @@ namespace SecureDatabase
             // 
             this.CustomerIDLabel.AutoSize = true;
             this.CustomerIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerIDLabel.Location = new System.Drawing.Point(153, 100);
+            this.CustomerIDLabel.Location = new System.Drawing.Point(155, 100);
             this.CustomerIDLabel.Name = "CustomerIDLabel";
-            this.CustomerIDLabel.Size = new System.Drawing.Size(168, 31);
+            this.CustomerIDLabel.Size = new System.Drawing.Size(89, 31);
             this.CustomerIDLabel.TabIndex = 3;
-            this.CustomerIDLabel.Text = "CustomerID:";
+            this.CustomerIDLabel.Text = "Email:";
             // 
             // PasswordLabel
             // 
@@ -115,16 +118,17 @@ namespace SecureDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(711, 360);
             this.Controls.Add(this.NewCustomerButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.CustomerIDLabel);
             this.Controls.Add(this.PasswordTextBox);
-            this.Controls.Add(this.CustomerIDTextBox);
+            this.Controls.Add(this.EmailTextBox);
             this.Controls.Add(this.LoginButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -140,7 +144,7 @@ namespace SecureDatabase
         #endregion
 
         private System.Windows.Forms.Button LoginButton;
-        private System.Windows.Forms.TextBox CustomerIDTextBox;
+        private System.Windows.Forms.TextBox EmailTextBox;
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.Label CustomerIDLabel;
         private System.Windows.Forms.Label PasswordLabel;

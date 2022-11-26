@@ -24,11 +24,8 @@ namespace SecureDatabase
         Integrated Security = True
         When false, User ID and Password are specified in the connection.
         When true, the current Windows account credentials are used for authentication.  
-
         Initial Catalog --> Name of database.
-
         */
-        string Customer_ID;
         string strsql;
         public Movies()
         {
@@ -42,13 +39,13 @@ namespace SecureDatabase
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if (CustomerIDTextBox.Text != "" && PasswordTextBox.Text != "")
+            if (EmailTextBox.Text != "" && PasswordTextBox.Text != "")
             {
                 using (cnn = new SqlConnection(s)) // The connection is closed automatically when the scope ends, else you need to use cnn.close()
                 {
                     cnn.Open(); // Opens a connection to the database.
 
-                    strsql = string.Format($"SELECT * FROM Customer WHERE Customer_ID = {CustomerIDTextBox.Text}");
+                    strsql = string.Format($"SELECT Email FROM Customer WHERE Email = '{EmailTextBox.Text}'");
                     cmd = new SqlCommand(strsql, cnn); // Queries, non-queries (insert, delete, update) and any SQL statement.
                     /*
                     - The ExecuteNonQuery() --> for (insert, update, and delete) statements.
@@ -56,37 +53,25 @@ namespace SecureDatabase
                     - The ExecuteScalar() method when you need to check the result of (select). This method executes the (select), 
                     and returns the first column of the first row from the result set returned by the (select) (the additional columns or rows are ignored).      
                     */
-                    object idCheck;
-                    try
+                    object emailCheck = cmd.ExecuteScalar();
+                    if (emailCheck == null) // If Customer's Email is not found
                     {
-                        idCheck = cmd.ExecuteScalar(); // Throws an exception if ID is not an integer since the "CustomerID" attribute is an integer.
-                    } 
-                    catch
-                    {
-                        MessageBox.Show("Only numbers are allowed for the ID", "Illegal Characters", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    if (idCheck == null) // If Customer's ID is not found
-                    {
-                        MessageBox.Show("Customer ID wasn't found, Please enter another one", "ID isn't found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Account was not found", "Account doesn't exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-
                         string hash = computeHash();
-
-                        strsql = string.Format("SELECT * FROM Customer WHERE Customer_ID = {0} AND Password = '{1}'", CustomerIDTextBox.Text, hash);
+                        strsql = string.Format("SELECT Password FROM Customer WHERE Password = '{0}'", hash);
                         cmd = new SqlCommand(strsql, cnn);
                         object passCheck = cmd.ExecuteScalar();
-                        if (passCheck == null)
+                        if (passCheck == null) // If the new computed hash is found, then the password was correct.
                         {
-                            MessageBox.Show("Password is not correct, Please enter another one", "Incorrect Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Credentials are not correct", "Incorrect Credentials", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            Customer_ID = CustomerIDTextBox.Text;
                             Hide(); // Hides the current window
-                            OrderedCDs f = new OrderedCDs(Customer_ID); // Creates a new window
+                            OrderedCDs f = new OrderedCDs(EmailTextBox.Text); // Creates a new window
                             f.ShowDialog(); // Opens a new window
                             Close(); // Closes the previous window.
                         }
@@ -95,9 +80,8 @@ namespace SecureDatabase
             }
             else
             {
-                MessageBox.Show("Please enter all of the required fields", "StudentID and Password required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please enter all of the required fields", "Fields required", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
         private void ExitButton_Click(object sender, EventArgs e)
         {
@@ -105,15 +89,23 @@ namespace SecureDatabase
         }
         private void NewCustomerButton_Click(object sender, EventArgs e)
         {
-            Customer_ID = CustomerIDTextBox.Text;
             Hide();
-            New_Customer f = new New_Customer(Customer_ID);
+            New_Customer f = new New_Customer();
             f.ShowDialog();
             Close();
         }
+
         private string computeHash()
         {
-            strsql = string.Format("SELECT Salt FROM Customer WHERE Customer_ID = {0}", CustomerIDTextBox.Text);
+            /*
+            Here, we compute the hash for the user's password and we compare it to the hash stored in the database.
+            If they match, then the password is correct. Else, it is not correct.      
+            */
+            // Get Salt from database
+            crypto cry = new crypto();
+            uint userID = cry.generateCustomerID(EmailTextBox.Text);
+
+            strsql = string.Format("SELECT Salt FROM Customer WHERE Cusomter_ID = {0}", userID);
             cmd = new SqlCommand(strsql, cnn);
 
             SqlDataReader reader = cmd.ExecuteReader();
@@ -134,8 +126,8 @@ namespace SecureDatabase
             byte[] salt = saltSplit.Select(value => Convert.ToByte(value, 16)).ToArray(); // Covert back to array of bytes.
             reader.Close();
 
-            Rfc2898DeriveBytes obj = new Rfc2898DeriveBytes(PasswordTextBox.Text, salt, 1000, HashAlgorithmName.SHA256); // Generate the hash again
-            byte[] keyArray = obj.GetBytes(32);
+            Rfc2898DeriveBytes obj = new Rfc2898DeriveBytes(PasswordTextBox.Text, salt, 5000, HashAlgorithmName.SHA512); // Generate the hash.
+            byte[] keyArray = obj.GetBytes(64);
 
             string hash = BitConverter.ToString(keyArray);
             hash = hash.Replace("-", "");

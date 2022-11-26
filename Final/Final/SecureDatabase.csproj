@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="crypto.cs" />
     <Compile Include="New_Customer.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -29,6 +29,7 @@ namespace SecureDatabase
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderedCDs));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CDIDTextBox = new System.Windows.Forms.TextBox();
             this.CDidLabel = new System.Windows.Forms.Label();
@@ -53,50 +54,54 @@ namespace SecureDatabase
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 165);
+            this.dataGridView1.Location = new System.Drawing.Point(20, 132);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(956, 308);
+            this.dataGridView1.Size = new System.Drawing.Size(850, 246);
             this.dataGridView1.TabIndex = 0;
             // 
             // CDIDTextBox
             // 
-            this.CDIDTextBox.Location = new System.Drawing.Point(130, 30);
+            this.CDIDTextBox.Location = new System.Drawing.Point(20, 38);
+            this.CDIDTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CDIDTextBox.Name = "CDIDTextBox";
-            this.CDIDTextBox.Size = new System.Drawing.Size(205, 26);
+            this.CDIDTextBox.Size = new System.Drawing.Size(167, 22);
             this.CDIDTextBox.TabIndex = 2;
             // 
             // CDidLabel
             // 
             this.CDidLabel.AutoSize = true;
             this.CDidLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CDidLabel.Location = new System.Drawing.Point(15, 19);
+            this.CDidLabel.Location = new System.Drawing.Point(15, 12);
             this.CDidLabel.Name = "CDidLabel";
-            this.CDidLabel.Size = new System.Drawing.Size(79, 29);
+            this.CDidLabel.Size = new System.Drawing.Size(67, 25);
             this.CDidLabel.TabIndex = 4;
             this.CDidLabel.Text = "CD id:";
             // 
             // SearchButton
             // 
             this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchButton.Location = new System.Drawing.Point(394, 12);
+            this.SearchButton.Location = new System.Drawing.Point(656, 20);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(158, 53);
+            this.SearchButton.Size = new System.Drawing.Size(160, 42);
             this.SearchButton.TabIndex = 9;
-            this.SearchButton.Text = "Search:";
+            this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // BackButton
             // 
             this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackButton.Location = new System.Drawing.Point(22, 476);
+            this.BackButton.Location = new System.Drawing.Point(12, 410);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(301, 53);
+            this.BackButton.Size = new System.Drawing.Size(121, 42);
             this.BackButton.TabIndex = 11;
-            this.BackButton.Text = "<<Back";
+            this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
@@ -104,64 +109,69 @@ namespace SecureDatabase
             // 
             this.QuantityLabel.AutoSize = true;
             this.QuantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuantityLabel.Location = new System.Drawing.Point(26, 99);
+            this.QuantityLabel.Location = new System.Drawing.Point(15, 70);
             this.QuantityLabel.Name = "QuantityLabel";
-            this.QuantityLabel.Size = new System.Drawing.Size(106, 29);
+            this.QuantityLabel.Size = new System.Drawing.Size(91, 25);
             this.QuantityLabel.TabIndex = 13;
             this.QuantityLabel.Text = "Quantity:";
             // 
             // QuantityTextBox
             // 
-            this.QuantityTextBox.Location = new System.Drawing.Point(138, 109);
+            this.QuantityTextBox.Location = new System.Drawing.Point(20, 97);
+            this.QuantityTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.QuantityTextBox.Name = "QuantityTextBox";
-            this.QuantityTextBox.Size = new System.Drawing.Size(187, 26);
+            this.QuantityTextBox.Size = new System.Drawing.Size(167, 22);
             this.QuantityTextBox.TabIndex = 14;
             // 
             // OrderedQuantityTextBox
             // 
-            this.OrderedQuantityTextBox.Location = new System.Drawing.Point(379, 109);
+            this.OrderedQuantityTextBox.Location = new System.Drawing.Point(227, 36);
+            this.OrderedQuantityTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OrderedQuantityTextBox.Name = "OrderedQuantityTextBox";
-            this.OrderedQuantityTextBox.Size = new System.Drawing.Size(173, 26);
+            this.OrderedQuantityTextBox.Size = new System.Drawing.Size(169, 22);
             this.OrderedQuantityTextBox.TabIndex = 15;
             // 
             // OrderedQuantityLabel
             // 
             this.OrderedQuantityLabel.AutoSize = true;
             this.OrderedQuantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderedQuantityLabel.Location = new System.Drawing.Point(357, 77);
+            this.OrderedQuantityLabel.Location = new System.Drawing.Point(222, 9);
             this.OrderedQuantityLabel.Name = "OrderedQuantityLabel";
-            this.OrderedQuantityLabel.Size = new System.Drawing.Size(210, 29);
+            this.OrderedQuantityLabel.Size = new System.Drawing.Size(174, 25);
             this.OrderedQuantityLabel.TabIndex = 16;
             this.OrderedQuantityLabel.Text = "Ordered_Quantity:";
             // 
             // MovieNameTextBox
             // 
-            this.MovieNameTextBox.Location = new System.Drawing.Point(595, 47);
+            this.MovieNameTextBox.Location = new System.Drawing.Point(447, 36);
+            this.MovieNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MovieNameTextBox.Name = "MovieNameTextBox";
-            this.MovieNameTextBox.Size = new System.Drawing.Size(191, 26);
+            this.MovieNameTextBox.Size = new System.Drawing.Size(170, 22);
             this.MovieNameTextBox.TabIndex = 17;
             // 
             // OrderDateTextBox
             // 
-            this.OrderDateTextBox.Location = new System.Drawing.Point(603, 109);
+            this.OrderDateTextBox.Location = new System.Drawing.Point(227, 97);
+            this.OrderDateTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OrderDateTextBox.Name = "OrderDateTextBox";
-            this.OrderDateTextBox.Size = new System.Drawing.Size(183, 26);
+            this.OrderDateTextBox.Size = new System.Drawing.Size(169, 22);
             this.OrderDateTextBox.TabIndex = 18;
             // 
             // UnitPriceTextBox
             // 
-            this.UnitPriceTextBox.Location = new System.Drawing.Point(815, 47);
+            this.UnitPriceTextBox.Location = new System.Drawing.Point(447, 97);
+            this.UnitPriceTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UnitPriceTextBox.Name = "UnitPriceTextBox";
-            this.UnitPriceTextBox.Size = new System.Drawing.Size(183, 26);
+            this.UnitPriceTextBox.Size = new System.Drawing.Size(170, 22);
             this.UnitPriceTextBox.TabIndex = 20;
             // 
             // MovieNameLabel
             // 
             this.MovieNameLabel.AutoSize = true;
             this.MovieNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MovieNameLabel.Location = new System.Drawing.Point(590, 15);
+            this.MovieNameLabel.Location = new System.Drawing.Point(442, 9);
             this.MovieNameLabel.Name = "MovieNameLabel";
-            this.MovieNameLabel.Size = new System.Drawing.Size(162, 29);
+            this.MovieNameLabel.Size = new System.Drawing.Size(134, 25);
             this.MovieNameLabel.TabIndex = 21;
             this.MovieNameLabel.Text = "Movie_Name:";
             // 
@@ -169,9 +179,9 @@ namespace SecureDatabase
             // 
             this.UnitPriceLabel.AutoSize = true;
             this.UnitPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitPriceLabel.Location = new System.Drawing.Point(802, 15);
+            this.UnitPriceLabel.Location = new System.Drawing.Point(442, 70);
             this.UnitPriceLabel.Name = "UnitPriceLabel";
-            this.UnitPriceLabel.Size = new System.Drawing.Size(130, 29);
+            this.UnitPriceLabel.Size = new System.Drawing.Size(107, 25);
             this.UnitPriceLabel.TabIndex = 22;
             this.UnitPriceLabel.Text = "Unit_Price:";
             // 
@@ -179,47 +189,49 @@ namespace SecureDatabase
             // 
             this.OrderDateLabel.AutoSize = true;
             this.OrderDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderDateLabel.Location = new System.Drawing.Point(590, 76);
+            this.OrderDateLabel.Location = new System.Drawing.Point(222, 70);
             this.OrderDateLabel.Name = "OrderDateLabel";
-            this.OrderDateLabel.Size = new System.Drawing.Size(145, 29);
+            this.OrderDateLabel.Size = new System.Drawing.Size(120, 25);
             this.OrderDateLabel.TabIndex = 23;
             this.OrderDateLabel.Text = "Order_Date:";
             // 
             // AddToMyCartButton
             // 
-            this.AddToMyCartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddToMyCartButton.Location = new System.Drawing.Point(815, 88);
+            this.AddToMyCartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddToMyCartButton.Location = new System.Drawing.Point(656, 77);
+            this.AddToMyCartButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddToMyCartButton.Name = "AddToMyCartButton";
-            this.AddToMyCartButton.Size = new System.Drawing.Size(180, 53);
+            this.AddToMyCartButton.Size = new System.Drawing.Size(160, 42);
             this.AddToMyCartButton.TabIndex = 24;
-            this.AddToMyCartButton.Text = "Add to my cart:";
+            this.AddToMyCartButton.Text = "Add to Cart";
             this.AddToMyCartButton.UseVisualStyleBackColor = true;
             this.AddToMyCartButton.Click += new System.EventHandler(this.AddToMyCartButton_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(795, 529);
+            this.textBox1.Location = new System.Drawing.Point(734, 410);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(173, 26);
+            this.textBox1.Size = new System.Drawing.Size(154, 22);
             this.textBox1.TabIndex = 25;
             // 
             // TotalPriceLabel
             // 
             this.TotalPriceLabel.AutoSize = true;
             this.TotalPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalPriceLabel.Location = new System.Drawing.Point(691, 476);
+            this.TotalPriceLabel.Location = new System.Drawing.Point(623, 383);
             this.TotalPriceLabel.Name = "TotalPriceLabel";
-            this.TotalPriceLabel.Size = new System.Drawing.Size(136, 29);
+            this.TotalPriceLabel.Size = new System.Drawing.Size(111, 25);
             this.TotalPriceLabel.TabIndex = 26;
             this.TotalPriceLabel.Text = "Total Price:";
             // 
             // OrderedCDs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1024, 579);
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(910, 463);
             this.Controls.Add(this.TotalPriceLabel);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.AddToMyCartButton);
@@ -239,6 +251,8 @@ namespace SecureDatabase
             this.Controls.Add(this.CDIDTextBox);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "OrderedCDs";
