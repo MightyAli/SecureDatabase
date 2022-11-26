@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MoviesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MoviesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RBAC_demo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RBAC_demo.Designer.cs">
+      <DependentUpon>RBAC_demo.cs</DependentUpon>
+    </Compile>
     <Compile Include="New_Customer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +98,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RBAC_demo.resx">
+      <DependentUpon>RBAC_demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="MoviesDataSet.xsc">
+      <DependentUpon>MoviesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MoviesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MoviesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MoviesDataSet.xss">
+      <DependentUpon>MoviesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

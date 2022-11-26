@@ -16,7 +16,7 @@ namespace SecureDatabase
     {
         SqlConnection cnn;
         string Customer_ID;
-        string s = ("Data Source = ACER\\SQLEXPRESS; Initial Catalog = Movies; Integrated Security = True;");
+        string s = ("Data Source = DESKTOP-FJRM1KO\\SQLEXPRESS; Initial Catalog = Movies; Integrated Security = True;");
         public New_Customer(string Customer_ID)
         {
             InitializeComponent();

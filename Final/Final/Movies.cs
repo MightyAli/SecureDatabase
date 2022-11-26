@@ -19,7 +19,7 @@ namespace SecureDatabase
     {
         SqlConnection cnn;
         SqlCommand cmd;
-        string s = ("Data Source = ACER\\SQLEXPRESS; Initial Catalog = Movies; Integrated Security = True;");
+        string s = ("Data Source = DESKTOP-FJRM1KO\\SQLEXPRESS; Initial Catalog = Movies; Integrated Security = True;");
         /*
         Integrated Security = True
         When false, User ID and Password are specified in the connection.

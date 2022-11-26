@@ -41,10 +41,10 @@ namespace SecureDatabase
             // LoginButton
             // 
             this.LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.Location = new System.Drawing.Point(343, 221);
-            this.LoginButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LoginButton.Location = new System.Drawing.Point(257, 180);
+            this.LoginButton.Margin = new System.Windows.Forms.Padding(2);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(157, 48);
+            this.LoginButton.Size = new System.Drawing.Size(118, 39);
             this.LoginButton.TabIndex = 0;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
@@ -52,28 +52,29 @@ namespace SecureDatabase
             // 
             // CustomerIDTextBox
             // 
-            this.CustomerIDTextBox.Location = new System.Drawing.Point(332, 105);
-            this.CustomerIDTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CustomerIDTextBox.Location = new System.Drawing.Point(249, 85);
+            this.CustomerIDTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.CustomerIDTextBox.Name = "CustomerIDTextBox";
-            this.CustomerIDTextBox.Size = new System.Drawing.Size(187, 22);
+            this.CustomerIDTextBox.Size = new System.Drawing.Size(141, 20);
             this.CustomerIDTextBox.TabIndex = 1;
             // 
             // PasswordTextBox
             // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(332, 163);
-            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PasswordTextBox.Location = new System.Drawing.Point(249, 132);
+            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
-            this.PasswordTextBox.Size = new System.Drawing.Size(187, 22);
+            this.PasswordTextBox.Size = new System.Drawing.Size(141, 20);
             this.PasswordTextBox.TabIndex = 2;
             // 
             // CustomerIDLabel
             // 
             this.CustomerIDLabel.AutoSize = true;
             this.CustomerIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerIDLabel.Location = new System.Drawing.Point(153, 100);
+            this.CustomerIDLabel.Location = new System.Drawing.Point(115, 81);
+            this.CustomerIDLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CustomerIDLabel.Name = "CustomerIDLabel";
-            this.CustomerIDLabel.Size = new System.Drawing.Size(168, 31);
+            this.CustomerIDLabel.Size = new System.Drawing.Size(135, 26);
             this.CustomerIDLabel.TabIndex = 3;
             this.CustomerIDLabel.Text = "CustomerID:";
             // 
@@ -81,19 +82,20 @@ namespace SecureDatabase
             // 
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordLabel.Location = new System.Drawing.Point(155, 156);
+            this.PasswordLabel.Location = new System.Drawing.Point(116, 127);
+            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(142, 31);
+            this.PasswordLabel.Size = new System.Drawing.Size(114, 26);
             this.PasswordLabel.TabIndex = 4;
             this.PasswordLabel.Text = "Password:";
             // 
             // ExitButton
             // 
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.Location = new System.Drawing.Point(543, 302);
-            this.ExitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ExitButton.Location = new System.Drawing.Point(407, 245);
+            this.ExitButton.Margin = new System.Windows.Forms.Padding(2);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(157, 48);
+            this.ExitButton.Size = new System.Drawing.Size(118, 39);
             this.ExitButton.TabIndex = 5;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
@@ -102,10 +104,10 @@ namespace SecureDatabase
             // NewCustomerButton
             // 
             this.NewCustomerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewCustomerButton.Location = new System.Drawing.Point(12, 302);
-            this.NewCustomerButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NewCustomerButton.Location = new System.Drawing.Point(9, 245);
+            this.NewCustomerButton.Margin = new System.Windows.Forms.Padding(2);
             this.NewCustomerButton.Name = "NewCustomerButton";
-            this.NewCustomerButton.Size = new System.Drawing.Size(227, 48);
+            this.NewCustomerButton.Size = new System.Drawing.Size(170, 39);
             this.NewCustomerButton.TabIndex = 6;
             this.NewCustomerButton.Text = "New Customer";
             this.NewCustomerButton.UseVisualStyleBackColor = true;
@@ -113,10 +115,10 @@ namespace SecureDatabase
             // 
             // Movies
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(711, 360);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.NewCustomerButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.PasswordLabel);
@@ -125,7 +127,7 @@ namespace SecureDatabase
             this.Controls.Add(this.CustomerIDTextBox);
             this.Controls.Add(this.LoginButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Movies";

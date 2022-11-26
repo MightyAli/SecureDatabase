@@ -24,3 +24,17 @@ C:\Users\Alirm\Desktop\SecureDatabase\Final\Final\obj\Debug\SecureDatabase.cspro
 C:\Users\Alirm\Desktop\SecureDatabase\Final\Final\obj\Debug\SecureDatabase.csproj.CoreCompileInputs.cache
 C:\Users\Alirm\Desktop\SecureDatabase\Final\Final\obj\Debug\SecureDatabase.exe
 C:\Users\Alirm\Desktop\SecureDatabase\Final\Final\obj\Debug\SecureDatabase.pdb
+C:\Users\laure\Desktop\Final\Final\bin\Debug\SecureDatabase.exe.config
+C:\Users\laure\Desktop\Final\Final\bin\Debug\SecureDatabase.exe
+C:\Users\laure\Desktop\Final\Final\bin\Debug\SecureDatabase.pdb
+C:\Users\laure\Desktop\Final\Final\obj\Debug\SecureDatabase.csproj.AssemblyReference.cache
+C:\Users\laure\Desktop\Final\Final\obj\Debug\SecureDatabase.csproj.SuggestedBindingRedirects.cache
+C:\Users\laure\Desktop\Final\Final\obj\Debug\SecureDatabase.New_Customer.resources
+C:\Users\laure\Desktop\Final\Final\obj\Debug\SecureDatabase.OrderedCDs.resources
+C:\Users\laure\Desktop\Final\Final\obj\Debug\SecureDatabase.Movies.resources
+C:\Users\laure\Desktop\Final\Final\obj\Debug\SecureDatabase.Properties.Resources.resources
+C:\Users\laure\Desktop\Final\Final\obj\Debug\SecureDatabase.csproj.GenerateResource.cache
+C:\Users\laure\Desktop\Final\Final\obj\Debug\SecureDatabase.csproj.CoreCompileInputs.cache
+C:\Users\laure\Desktop\Final\Final\obj\Debug\SecureDatabase.exe
+C:\Users\laure\Desktop\Final\Final\obj\Debug\SecureDatabase.pdb
+C:\Users\laure\Desktop\Final\Final\obj\Debug\SecureDatabase.RBAC_demo.resources

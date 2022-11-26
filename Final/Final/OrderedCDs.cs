@@ -18,7 +18,7 @@ namespace SecureDatabase
 
         SqlConnection cnn;
         string Customer_ID;
-        string s = ("Data Source = ACER\\SQLEXPRESS; Initial Catalog = Movies; Integrated Security = True;");
+        string s = ("Data Source = DESKTOP-FJRM1KO\\SQLEXPRESS; Initial Catalog = Movies; Integrated Security = True;");
         public OrderedCDs(string Customer_ID)
         {
             InitializeComponent();
@@ -111,6 +111,14 @@ namespace SecureDatabase
                 OrderQuan += Convert.ToInt32(OrderedQuantityTextBox.Text);
                 textBox1.Text = (unitPrice * OrderQuan).ToString();
             }
+        }
+
+        private void RBAC_demo_button_Click(object sender, EventArgs e)
+        {
+            Hide();
+            RBAC_demo RBAC = new RBAC_demo();
+            RBAC.ShowDialog();
+            Close();
         }
     }
 }

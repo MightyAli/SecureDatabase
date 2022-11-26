@@ -22,5 +22,16 @@ namespace SecureDatabase.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-FJRM1KO\\SQLEXPRESS;Initial Catalog=Movies;Integrated Security" +
+            "=True")]
+        public string MoviesConnectionString {
+            get {
+                return ((string)(this["MoviesConnectionString"]));
+            }
+        }
     }
 }
