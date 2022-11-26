@@ -17,8 +17,11 @@ namespace SecureDatabase
         int OrderQuan = 0;
 
         SqlConnection cnn;
+        SqlConnection roleCnn;
         string Customer_ID;
         string s = ("Data Source = DESKTOP-FJRM1KO\\SQLEXPRESS; Initial Catalog = Movies; Integrated Security = True;");
+        string[] allowed_RBAC_roles = new string[] { "ADMIN", "MARKETING", "SALES" };
+
         public OrderedCDs(string Customer_ID)
         {
             InitializeComponent();
@@ -32,9 +35,26 @@ namespace SecureDatabase
             dataGridView1.Columns.Add("Order_date", "Order_date");
             dataGridView1.Columns.Add("unit_price", "unit_price");
             dataGridView1.Columns.Add("movie_name", "movie_name ID");
-            using (cnn = new SqlConnection(s))
+            using (roleCnn = new SqlConnection(s))
             {
+                roleCnn.Open();
+
+                string roleQuery = string.Format($"SELECT Fname FROM Customer WHERE Customer_ID = {Customer_ID}");
+                SqlCommand roleCmd = new SqlCommand(roleQuery, roleCnn);
+                SqlDataReader roleReader = roleCmd.ExecuteReader();
+                while (roleReader.Read())
+                {
+                    string role = roleReader.GetString(0);
+                    if (!allowed_RBAC_roles.Contains(role))
+                    {
+                        RBAC_demo_button.Hide();
+                    }
+                }
+                roleCnn.Close();
+            }
+            using (cnn = new SqlConnection(s)){
                 cnn.Open();
+            
                 string strsql = string.Format("SELECT CD.CD_ID, Order_Quantity, Order_date, Unit_Price ,Movie_Name " +
                     "FROM CD, OrderT, Customer " +
                     "WHERE CD.CD_ID = OrderT.CD_ID AND Customer.Customer_ID = OrderT.Customer_ID AND Customer.Customer_ID = {0} " +
@@ -116,7 +136,7 @@ namespace SecureDatabase
         private void RBAC_demo_button_Click(object sender, EventArgs e)
         {
             Hide();
-            RBAC_demo RBAC = new RBAC_demo();
+            RBAC_demo RBAC = new RBAC_demo(Customer_ID);
             RBAC.ShowDialog();
             Close();
         }

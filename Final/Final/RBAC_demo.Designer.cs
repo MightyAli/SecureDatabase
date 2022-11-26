@@ -33,15 +33,16 @@
             this.marketing_data_button = new System.Windows.Forms.Button();
             this.moviesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.moviesDataSet = new SecureDatabase.MoviesDataSet();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.moviesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moviesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // sales_data_button
             // 
             this.sales_data_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.sales_data_button.Location = new System.Drawing.Point(54, 41);
+            this.sales_data_button.Location = new System.Drawing.Point(54, 11);
             this.sales_data_button.Margin = new System.Windows.Forms.Padding(2);
             this.sales_data_button.Name = "sales_data_button";
             this.sales_data_button.Size = new System.Drawing.Size(183, 69);
@@ -53,7 +54,7 @@
             // marketing_data_button
             // 
             this.marketing_data_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.marketing_data_button.Location = new System.Drawing.Point(299, 41);
+            this.marketing_data_button.Location = new System.Drawing.Point(308, 11);
             this.marketing_data_button.Margin = new System.Windows.Forms.Padding(2);
             this.marketing_data_button.Name = "marketing_data_button";
             this.marketing_data_button.Size = new System.Drawing.Size(183, 69);
@@ -72,15 +73,13 @@
             this.moviesDataSet.DataSetName = "MoviesDataSet";
             this.moviesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // richTextBox1
+            // dataGridView1
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.richTextBox1.Location = new System.Drawing.Point(54, 138);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(428, 142);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(54, 103);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(437, 177);
+            this.dataGridView1.TabIndex = 2;
             // 
             // RBAC_demo
             // 
@@ -88,7 +87,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(533, 292);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.marketing_data_button);
             this.Controls.Add(this.sales_data_button);
             this.Name = "RBAC_demo";
@@ -97,6 +96,7 @@
             this.Load += new System.EventHandler(this.RBAC_demo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.moviesDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moviesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -107,6 +107,6 @@
         private System.Windows.Forms.Button marketing_data_button;
         private System.Windows.Forms.BindingSource moviesDataSetBindingSource;
         private MoviesDataSet moviesDataSet;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
