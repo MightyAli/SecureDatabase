@@ -14,23 +14,25 @@ namespace SecureDatabase
     public partial class RBAC_demo : Form
     {
         SqlConnection cnn;
-        SqlCommand cmd;
         string s = ("Data Source = DESKTOP-FJRM1KO\\SQLEXPRESS; Initial Catalog = Movies; Integrated Security = True;");
-        string strsql;
-        string Customer_ID;
+        
+        // In final version would be passed by the "log in" button, not a "RBAC" button
+        // would need to make sure that the log in button returned a valid role i.e. make sure
+        // that the user is in the database before querying for their role and triggering RBAC_demo
         string Customer_Role;
+
+        // This is not secure
         string[] allowed_marketing_roles = new string[] { "ADMIN", "MARKETING" };
         string[] allowed_sales_roles = new string[] { "ADMIN", "SALES" };
 
-        public RBAC_demo(string Customer_ID)
+        public RBAC_demo(string Customer_Role)
         {
             InitializeComponent();
-            this.Customer_ID = Customer_ID;
+            this.Customer_Role = Customer_Role;
         }
 
         private void sales_data_button_Click(object sender, EventArgs e)
         {
-
             dataGridView1.Columns.Clear();
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
@@ -75,8 +77,6 @@ namespace SecureDatabase
                 cnn.Close();
             }
         }
-    
-
 
         private void marketing_data_button_Click(object sender, EventArgs e)
         {
@@ -119,18 +119,13 @@ namespace SecureDatabase
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
 
-            using (cnn = new SqlConnection(s))
+            if (!allowed_marketing_roles.Contains(Customer_Role))
             {
-                cnn.Open(); // Opens a connection to the database
-
-                strsql = string.Format($"SELECT Fname FROM CUSTOMER WHERE Customer_ID = {Customer_ID}");
-                cmd = new SqlCommand(strsql, cnn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    this.Customer_Role = reader[0].ToString();
-                }
-                cnn.Close();
+                marketing_data_button.Hide();
+            }
+            if (!allowed_sales_roles.Contains(Customer_Role))
+            {
+                sales_data_button.Hide();
             }
         }
 

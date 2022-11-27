@@ -19,6 +19,7 @@ namespace SecureDatabase
         SqlConnection cnn;
         SqlConnection roleCnn;
         string Customer_ID;
+        string Customer_Role;
         string s = ("Data Source = DESKTOP-FJRM1KO\\SQLEXPRESS; Initial Catalog = Movies; Integrated Security = True;");
         string[] allowed_RBAC_roles = new string[] { "ADMIN", "MARKETING", "SALES" };
 
@@ -45,6 +46,7 @@ namespace SecureDatabase
                 while (roleReader.Read())
                 {
                     string role = roleReader.GetString(0);
+                    this.Customer_Role = role;
                     if (!allowed_RBAC_roles.Contains(role))
                     {
                         RBAC_demo_button.Hide();
@@ -136,7 +138,7 @@ namespace SecureDatabase
         private void RBAC_demo_button_Click(object sender, EventArgs e)
         {
             Hide();
-            RBAC_demo RBAC = new RBAC_demo(Customer_ID);
+            RBAC_demo RBAC = new RBAC_demo(Customer_Role);
             RBAC.ShowDialog();
             Close();
         }

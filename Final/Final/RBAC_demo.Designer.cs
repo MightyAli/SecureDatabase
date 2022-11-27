@@ -59,7 +59,7 @@
             this.marketing_data_button.Name = "marketing_data_button";
             this.marketing_data_button.Size = new System.Drawing.Size(183, 69);
             this.marketing_data_button.TabIndex = 1;
-            this.marketing_data_button.Text = "View Marketing Email List";
+            this.marketing_data_button.Text = "View Marketing Data";
             this.marketing_data_button.UseVisualStyleBackColor = true;
             this.marketing_data_button.Click += new System.EventHandler(this.marketing_data_button_Click);
             // 
