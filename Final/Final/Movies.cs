@@ -27,6 +27,7 @@ namespace SecureDatabase
         Initial Catalog --> Name of database.
         */
         string strsql;
+        crypto cry = new crypto();
         public Movies()
         {
             InitializeComponent();
@@ -44,8 +45,8 @@ namespace SecureDatabase
                 using (cnn = new SqlConnection(s)) // The connection is closed automatically when the scope ends, else you need to use cnn.close()
                 {
                     cnn.Open(); // Opens a connection to the database.
-
-                    strsql = string.Format($"SELECT Email FROM Customer WHERE Email = '{EmailTextBox.Text}'");
+                    uint ID = cry.generateCustomerID(EmailTextBox.Text);
+                    strsql = string.Format($"SELECT Customer_ID FROM Customer WHERE Customer_ID = {ID}");
                     cmd = new SqlCommand(strsql, cnn); // Queries, non-queries (insert, delete, update) and any SQL statement.
                     /*
                     - The ExecuteNonQuery() --> for (insert, update, and delete) statements.
@@ -53,8 +54,8 @@ namespace SecureDatabase
                     - The ExecuteScalar() method when you need to check the result of (select). This method executes the (select), 
                     and returns the first column of the first row from the result set returned by the (select) (the additional columns or rows are ignored).      
                     */
-                    object emailCheck = cmd.ExecuteScalar();
-                    if (emailCheck == null) // If Customer's Email is not found
+                    object IDCheck = cmd.ExecuteScalar();
+                    if (IDCheck == null) // If Customer's ID is not found
                     {
                         MessageBox.Show("Account was not found", "Account doesn't exists", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -71,7 +72,7 @@ namespace SecureDatabase
                         else
                         {
                             Hide(); // Hides the current window
-                            OrderedCDs f = new OrderedCDs(EmailTextBox.Text); // Creates a new window
+                            OrderedCDs f = new OrderedCDs(ID); // Creates a new window
                             f.ShowDialog(); // Opens a new window
                             Close(); // Closes the previous window.
                         }
@@ -102,10 +103,10 @@ namespace SecureDatabase
             If they match, then the password is correct. Else, it is not correct.      
             */
             // Get Salt from database
-            crypto cry = new crypto();
+           
             uint userID = cry.generateCustomerID(EmailTextBox.Text);
 
-            strsql = string.Format("SELECT Salt FROM Customer WHERE Cusomter_ID = {0}", userID);
+            strsql = string.Format("SELECT Salt FROM Customer WHERE Customer_ID = {0}", userID);
             cmd = new SqlCommand(strsql, cnn);
 
             SqlDataReader reader = cmd.ExecuteReader();

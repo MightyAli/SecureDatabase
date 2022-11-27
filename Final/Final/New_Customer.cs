@@ -51,7 +51,7 @@ namespace SecureDatabase
                             using (cnn = new SqlConnection(s))
                             {
                                 cnn.Open();
-                                ID = cry.generateCustomerID(EmailTestBox.Text);                              
+                                ID = cry.generateCustomerID(EmailTestBox.Text);
                                 string strsql = string.Format($"SELECT Customer_ID FROM Customer WHERE Customer_ID = '{ID}'");
                                 SqlCommand cmd = new SqlCommand(strsql, cnn);
                                 object R = cmd.ExecuteScalar();
@@ -63,10 +63,10 @@ namespace SecureDatabase
                                 else
                                 {
                                     computePasswordHash();
-                                    string email = encryptData(EmailTestBox.Text);
-                                    string fname = encryptData(FnameTextBox.Text);
-                                    string lname = encryptData(LnameTextBox.Text);
-                                    string phone = encryptData(MobileNumberTextBox.Text);
+                                    string email = cry.encryptData(EmailTestBox.Text, PassTestBox.Text, ID);
+                                    string fname = cry.encryptData(FnameTextBox.Text, PassTestBox.Text, ID);
+                                    string lname = cry.encryptData(LnameTextBox.Text, PassTestBox.Text, ID);
+                                    string phone = cry.encryptData(MobileNumberTextBox.Text, PassTestBox.Text, ID);
 
                                     using (cnn = new SqlConnection(s))
                                     {
@@ -139,44 +139,5 @@ namespace SecureDatabase
             return true;
         }
 
-        private string encryptData(string data)
-        {
-            /*
-            ID and password are used to generated the encryption key.            
-            For AES, the legal key sizes are 128, 192, and 256 bits.
-            For the IV, the size is a fixed 16 bytes.   
-            The input size is unlimited.
-            The output size.
-            Uses Cipher-Block Chaining (CBC) mode by default.
-            Output size = input size;
-            */
-            string stringID = ID.ToString();
-            byte[] salt = Encoding.ASCII.GetBytes(PassTestBox.Text);
-            Rfc2898DeriveBytes obj = new Rfc2898DeriveBytes(stringID, salt, 5000, HashAlgorithmName.SHA512);
-
-            AesCng aes = new AesCng();
-            aes.Key = obj.GetBytes(32);
-            aes.IV = obj.GetBytes(16); // Gets the next bytes after the first 32 bytes.
-            ICryptoTransform encryptor = aes.CreateEncryptor();
-
-            byte[] encryptedDataBytes;
-            using (MemoryStream ms = new MemoryStream()) // Data in RAM
-            {
-                using (CryptoStream cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
-                {
-                    using (StreamWriter sw = new StreamWriter(cs))
-                    {
-                        sw.Write(data);
-                    }
-                }
-                encryptedDataBytes = ms.ToArray();
-            }
-            string encryptedData = BitConverter.ToString(encryptedDataBytes);
-            encryptedData = encryptedData.Replace("-", "");
-            encryptedData = encryptedData.Insert(0, "0x");
-            return encryptedData;
-        }
-
-        
     }
 }
