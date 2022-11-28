@@ -43,7 +43,7 @@ namespace SecureDatabase
                 {
                     if (PassTestBox.Text == ConfirmPassTestBox.Text)
                     {
-                        if (PassTestBox.Text.Length >= 4) // Ensures that salt is large enough for the encryption/decryption
+                        if (PassTestBox.Text.Length >= 8) 
                         {
                             using (cnn = new SqlConnection(s))
                             {

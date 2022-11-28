@@ -1,15 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace SecureDatabase
 {
@@ -25,15 +18,13 @@ namespace SecureDatabase
         string email;
         string fname;
         string lname;
-        string phone;
-        
+        string phone;      
         public EditUser(uint ID, string pass)
         {
             InitializeComponent();
             this.ID = ID;
             this.pass = pass;
         }
-
         private void EditCustomer_Load(object sender, EventArgs e)
         {
             using (cnn = new SqlConnection(s))
@@ -64,7 +55,7 @@ namespace SecureDatabase
                 {
                     if (PassTestBox.Text == ConfirmPassTestBox.Text)
                     {
-                        if (PassTestBox.Text.Length >= 4)
+                        if (PassTestBox.Text.Length >= 8)
                         {
                             if (FnameTextBox.Text != fname || LnameTextBox.Text != lname || MobileNumberTextBox.Text != phone)
                             {
@@ -111,7 +102,6 @@ namespace SecureDatabase
                 MessageBox.Show("Please enter all of the required fields", "All fields are required", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Hide();
@@ -119,7 +109,5 @@ namespace SecureDatabase
             f.ShowDialog();
             Close();
         }
-
-
     }
 }

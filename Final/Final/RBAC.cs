@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SecureDatabase
@@ -25,8 +19,7 @@ namespace SecureDatabase
         {
             InitializeComponent();
             this.role = role;
-        }
-     
+        }  
         private void RBAC_Load(object sender, EventArgs e)
         {
             dataGridView1.Columns.Clear();
@@ -41,7 +34,6 @@ namespace SecureDatabase
                 SalesDataButton.Hide();
             }
         }
-
         private void SalesDataButton_Click(object sender, EventArgs e)
         {
             dataGridView1.Columns.Clear();
@@ -49,8 +41,7 @@ namespace SecureDatabase
             dataGridView1.Refresh();
             if (allowed_sales_roles.Contains(role))
             {
-                dataGridView1.Columns.Add("mandatory column because reasons", "Sales Data");
-                //dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dataGridView1.Columns.Add("Mandatory column because reasons", "Sales Data");
                 using (cnn = new SqlConnection(s))
                 {
                     cnn.Open();
@@ -69,7 +60,6 @@ namespace SecureDatabase
                 cnn.Close();
             }
         }
-
         private void MarketingDataButton_Click(object sender, EventArgs e)
         {
             dataGridView1.Columns.Clear();
@@ -78,7 +68,6 @@ namespace SecureDatabase
             if (allowed_marketing_roles.Contains(role))
             {
                 dataGridView1.Columns.Add("Marketing_Data", "Marketing Data");
-                //dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
                 using (cnn = new SqlConnection(s))
                 {
@@ -87,8 +76,6 @@ namespace SecureDatabase
                     com.CommandText = string.Format($"SELECT COUNT(UserID) FROM Users WHERE User_Role = 'customer'");
                     var numCustomersQueryResult = com.ExecuteScalar();
                     int numberOfCustomers = (int)numCustomersQueryResult;
-                    // int numberOfCustomers = (int)numCustomersQueryResult - 3;
-                    // subtract 3 to account for admin, marketing, sales users b/c those are company employees, not customers
 
                     dataGridView1.Rows.Add($"Customer Reach: {numberOfCustomers} Movie Maniacs!");
                     dataGridView1.Rows.Add("Next Campaign Launch: 7 Days.");
@@ -102,7 +89,6 @@ namespace SecureDatabase
                 cnn.Close();
             }
         }
-
         private void BackButton_Click(object sender, EventArgs e)
         {
             Hide();

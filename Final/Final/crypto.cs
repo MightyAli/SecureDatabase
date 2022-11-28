@@ -44,11 +44,10 @@ namespace SecureDatabase
             /*
             ID and password are used to generated the encryption key.            
             For AES, the legal key sizes are 128, 192, and 256 bits.
-            For the IV, the size is a fixed 16 bytes.   
-            The input size is unlimited.
-            The output size.
+            For the IV, the size is a fixed 128 bits.
             Uses Cipher-Block Chaining (CBC) mode by default.
-            Output size = input size;
+            The input size is unlimited.
+            Output size = input size, but it is split in blocks of 128 bits each.
             */
             string stringID = ID.ToString();
             byte[] salt = getSalt(pass);
@@ -83,7 +82,7 @@ namespace SecureDatabase
         }
         public string decryptData(string EncryptedData, string pass, uint ID)
         {
-           // byte[] encryptedDataBytes = fixDataFormat(EncryptedData);
+            // byte[] encryptedDataBytes = fixDataFormat(EncryptedData);
             byte[] encryptedDataBytes = Convert.FromBase64String(EncryptedData);
             string stringID = ID.ToString();
             byte[] salt = getSalt(pass);
@@ -129,7 +128,7 @@ namespace SecureDatabase
             8 bytes salt.
             SHA512 (SHA2) is used. Otherwise, it defaults to SHA160 (SHA1).
 
-            GetBytes() --> Combines a passed string (password for example), a salt, and some random number to create an input that is passed to the SHA512 to generate a key. This input to SHA512 can be of size up to 2^64 bits.
+            GetBytes() --> Combines a passed string (password for example), a salt, and some random number to create an input that is passed to the SHA512 to generate a key.
             If the salt is not defined (you specify the size only), then every time you run GetBytes(), a new salt will be created.
             If the salt value is fixed (you specify the array of bytes), then every time you run GetBytes(), the salt is used.
 

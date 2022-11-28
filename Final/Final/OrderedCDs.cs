@@ -1,17 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient; //For DataBase functions
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using System.Security.Policy;
-using System.Xml.Linq;
-using System.Collections;
+using System.Data.SqlClient;
+
 
 namespace SecureDatabase
 {
