@@ -14,7 +14,6 @@ Movie_Name VARCHAR(50) NOT NULL,
 Unit_Price FLOAT NOT NULL,
 );
 
-
 CREATE TABLE OrderT(
 UserID BIGINT NOT NULL,
 Movie_Name VARCHAR(50) NOT NULL,
@@ -22,5 +21,6 @@ Order_Quantity INT NOT NULL,
 Order_Date DATETIME NOT NULL,
 Total_Price FLOAT NOT NULL,
 );
+
 
 
